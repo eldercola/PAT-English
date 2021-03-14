@@ -35,6 +35,17 @@ if(ans.size()==0||ans.size()==1){
 	return false;
 }
 如果当前数列已经可以找出差值（长度>=2）,那么就看当前数加入之后，公差还是不是一致，一致的话，从当前数下一个开始继续找，直到数列长度变为n
+else{//1<ans.size()<n
+	if(primes[cur]-ans[ans.size()-1]==ans[ans.size()-1]-ans[ans.size()-2]){//与末尾数的差值跟公差一致，加入ans，如果size没到，向后继续寻找
+		ans.push_back(primes[cur]);
+		if(ans.size()==n)return true;
+		else{//继续找 
+			for(int i = cur+1;i<primes.size();i++)if(dfs(i))return true;
+			ans.pop_back();
+			return false;
+		}
+	}
+}
 
 代码长这样:(github里还不会用高亮)
 #include<bits/stdc++.h>
