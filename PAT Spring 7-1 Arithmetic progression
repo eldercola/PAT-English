@@ -25,14 +25,16 @@
 bool dfs(int cur)// 返回 bool 是因为我们要判断，如果从当前下标开始，往后遍历能否找到满足要求的数列（等差，长度为n），如果可以，返回true，不行返回false.
 如果当前ans中没有数字或只有一个数字，那么还找不到公差，尝试把当前下标的数放进去便是了。
 if(ans.size()==0||ans.size()==1){
-		ans.push_back(primes[cur]);
-    //从后往前找，而外层dfs（main那一层）从前往后，所以公差更大，就是双指针，一个指向头部，一个指向尾部，往中间靠拢。
-		for(int i = primes.size()-1;i>cur;i--){
-			if(dfs(i))return true;
-		}
-		ans.pop_back();
-		return false;
+	ans.push_back(primes[cur]);
+	//从后往前找，而外层dfs（main那一层）从前往后，所以公差更大，就是双指针，一个指向头部，一个指向尾部，往中间靠拢。
+	for(int i = primes.size()-1;i>cur;i--){
+		if(dfs(i))return true;
 	}
+	//如果没成功，就把刚加入的primes[cur] pop掉，说明它在当前数列不合适
+	ans.pop_back();
+	return false;
+}
+如果当前数列已经可以找出差值（长度>=2）,那么就看当前数加入之后，公差还是不是一致，一致的话，从当前数下一个开始继续找，直到数列长度变为n
 
 代码长这样:(github里还不会用高亮)
 #include<bits/stdc++.h>
