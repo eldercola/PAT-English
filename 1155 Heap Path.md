@@ -8,7 +8,7 @@
 7. 当然，有个特殊情况：所有节点大小一样，min_heap和max_heap都是false, 这种情况我当作not heap处理(至少我错误的那个样例，输出了Max Heap，可以证明 max_heap为true, 与这个特殊情况无关)
 # 更新，已解决
 原因在于 比较的时候，应该是每一个路径上的某点和它的上一个点比较，而不是直接和根节点比较，憨了憨了
-```
+```cpp
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
