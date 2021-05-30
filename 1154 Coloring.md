@@ -13,7 +13,7 @@ https://pintia.cn/problem-sets/994805342720868352/problems/type/7
 什么? 你说你用不来set? 那也不是没办法, C++ 官方文档!
 
 废话不多说，上代码!
-```
+```cpp
 #include<bits/stdc++.h>
 #include<vector>
 #include<set>
