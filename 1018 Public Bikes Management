@@ -1,3 +1,5 @@
+# 咕咕咕 有空就写思路(~~如果我还记得的话~~(bushi
+```cpp
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
@@ -54,7 +56,10 @@ void dfs(int cur,int curTime,int cursend,int curtake){
         }
     }
     path.pop_back();
-    mindis[cur]=100000000;//这一句去掉则第七个测试用例答案错误，但是不知道为什么要加
+    //加上这一句是因为, 假设有A->B->C和A->C这两条路径, 先走了前面的路
+    //如果不回到初始状态，假如后面的路步长比前面的小，是个更优解
+    //但因为没回到初始状态，则不会被检验出来
+    mindis[cur]=100000000;
 }
 
 int main(){
@@ -81,3 +86,4 @@ int main(){
     printf(" %d\n",bestTake);
     return 0;
 }
+```
