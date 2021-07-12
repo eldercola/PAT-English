@@ -3,7 +3,7 @@
 输出: 非topological order的序列下标(下标范围从0到K-1),每两个数之间用空格隔开，末尾换行
 
 逻辑如下:  
-**双指针法**: ```i```从序列末尾向序列开头遍历,子循环```j```从序列开头遍历到```i```,如果```i```到```j```存在有向边，那么这个序列不是topological order,因为topological order不存在```order[i]->order[j], when i>j```  
+**双指针法**(~~投机取巧法~~ bushi): ```i```从序列末尾向序列开头遍历,子循环```j```从序列开头遍历到```i```,如果```i```到```j```存在有向边，那么这个序列不是topological order,因为topological order不存在```order[i]->order[j], when i>j```  
 ```cpp
 #include<bits/stdc++.h>
 #include<vector>
