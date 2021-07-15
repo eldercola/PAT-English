@@ -22,6 +22,7 @@
 		if(dfs(i))all.push_back(ans);
 	}
 下面介绍dfs()函数
+```cpp
 bool dfs(int cur)// 返回 bool 是因为我们要判断，如果从当前下标开始，往后遍历能否找到满足要求的数列（等差，长度为n），如果可以，返回true，不行返回false.
 如果当前ans中没有数字或只有一个数字，那么还找不到公差，尝试把当前下标的数放进去便是了。
 if(ans.size()==0||ans.size()==1){
@@ -46,7 +47,8 @@ else{//1<ans.size()<n
 		}
 	}
 }
-
+```
+```cpp
 代码长这样:(github里还不会用高亮)
 #include<bits/stdc++.h>
 using namespace std;  
@@ -107,3 +109,4 @@ int main(){
 	}
 	return 0;
 }
+```
