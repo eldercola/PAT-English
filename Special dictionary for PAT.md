@@ -2,6 +2,7 @@
 ascending adj.上升的.  
   
 ## 2. functional specification
+adjacent adj.相邻的.  
 distinct adj.不同的.  
 recursively adv.递归地.  
 quadratic adj.二次的.  
